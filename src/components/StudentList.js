@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import "../style/StudentList.css"
+import { API_URL } from '../Config';
 const StudentList = () => {
     const { classId } = useParams();
     const [students, setStudents] = useState([]);
@@ -10,7 +11,7 @@ const StudentList = () => {
     useEffect(() => {
         const fetchStudents = async () => {
             try {
-                const response = await axios.get(`http://127.0.0.1:8000/api/class/${classId}/students/`);
+                const response = await axios.get(` ${API_URL}/class/${classId}/students/`);
                 setStudents(response.data);
             } catch (error) {
                 console.error('Error fetching students');

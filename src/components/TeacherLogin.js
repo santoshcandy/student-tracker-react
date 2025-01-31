@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import "../style/teacherlogin.css"
+import { API_URL } from '../Config';
 const TeacherLogin = () => {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
@@ -11,7 +12,7 @@ const TeacherLogin = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://127.0.0.1:8000/api/teacher/login/', {
+            const response = await axios.post(`${API_URL}/teacher/login/`, {
                 phone_number: phoneNumber,
                 password: password,
             });

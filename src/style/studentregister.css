@@ -1,0 +1,106 @@
+/* Overall container for the form */
+.registration-form-container {
+    background-color: #34495E;
+    color: white;
+    padding: 40px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out; /* Adding fadeIn animation */
+}
+
+/* Title styling */
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+    animation: slideIn 1s ease-out; /* Adding slideIn animation */
+}
+
+/* Form styling */
+.registration-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input field styling */
+.form-control {
+    background-color: #2C3E50;
+    border: 1px solid #2C3E50;
+    color: white;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #1ABC9C; /* Green color on focus */
+}
+
+/* Button styling */
+.btn-submit {
+    background-color: #1ABC9C;
+    color: white;
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #16A085; /* Slightly darker green on hover */
+}
+
+/* Success/Error message */
+.message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.success {
+    color: #1ABC9C;
+}
+
+.error {
+    color: #E74C3C;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideIn {
+    0% { transform: translateY(-30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .registration-form-container {
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 90%;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .form-control {
+        font-size: 14px;
+    }
+
+    .btn-submit {
+        font-size: 14px;
+        padding: 8px;
+    }
+}

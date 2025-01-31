@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import "../style/StudentDashboard.css"
 import MarksForm from './MarksForm';
+import { API_URL } from '../Config';
 const StudentDashboard = () => {
     const { studentId } = useParams(); // Using useParams() for React Router v6
     const [studentData, setStudentData] = useState({});
@@ -14,7 +15,7 @@ const StudentDashboard = () => {
     useEffect(() => {
         const fetchStudentData = async () => {
             try {
-                const response = await axios.get(`http://127.0.0.1:8000/api/student/${studentId}/dasboard/`);
+                const response = await axios.get(` ${API_URL}/student/${studentId}/dasboard/`);
                 setStudentData(response.data.student_info);
                 setMarks(response.data.marks);
                 setTotal(response.data.total_marks)

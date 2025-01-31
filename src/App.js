@@ -9,12 +9,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Homepage from './components/Homepage';
 import StudentLogin from './student/StudentLogin';
 import StdDashboard from './student/StdDashboard';
+import ClassRegister from './components/ClassRegister';
+import StudentRegister from './student/StudentRegister';
 const App = () => {
     return (
         <Router>
          
             <Routes>
                 <Route path="/teacher/register" element={<TeacherRegister/>} />
+                <Route path="/class/register" element={< ClassRegister/>} />
+                <Route path="/student/register" element={< StudentRegister/>} />
+
                 <Route path="/teacher/login" element={<TeacherLogin/>} />
                 <Route path="/student/login" element={< StudentLogin/>} />
 

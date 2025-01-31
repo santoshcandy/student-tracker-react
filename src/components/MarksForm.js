@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import { API_URL } from '../Config';
 const MarksForm = ({ studentId, markId, existingMarkData, onFormSubmit }) => {
     const [subject, setSubject] = useState(existingMarkData ? existingMarkData.subject : '');
     const [assignmentMarks, setAssignmentMarks] = useState(existingMarkData ? existingMarkData.assigment_marks : 0);
@@ -36,10 +36,10 @@ const MarksForm = ({ studentId, markId, existingMarkData, onFormSubmit }) => {
             let response;
             if (markId) {
                 // If markId exists, we are updating an existing mark
-                response = await axios.put(`http://127.0.0.1:8000/api/marks/${markId}/`, marksDataa);
+                response = await axios.put(` ${API_URL}/marks/${markId}/`, marksDataa);
             } else {
                 // If markId doesn't exist, create a new mark
-                response = await axios.post('http://127.0.0.1:8000/api/marks/', marksData);
+                response = await axios.post(`${API_URL}/marks/`, marksData);
             }
 
             onFormSubmit(response.data); // Pass the response data back to the parent component

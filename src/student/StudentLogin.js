@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import "../style/studentlogin.css";
-
+import { API_URL } from '../Config';
 const StudentLogin = () => {
   const [regNumber, setRegNumber] = useState('');
   const [error, setError] = useState('');
@@ -13,7 +13,7 @@ const StudentLogin = () => {
 
     try {
       // Send a POST request to your API
-      const response = await axios.post('http://127.0.0.1:8000/api/student/login/', {
+      const response = await axios.post(`${API_URL}/student/login/`, {
         reg_number: regNumber,
       });
 

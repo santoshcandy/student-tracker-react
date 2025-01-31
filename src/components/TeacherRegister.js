@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import "../style/teacherregister.css"
+import { API_URL } from '../Config';
 const TeacherRegister = () => {
     const [name, setName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
@@ -11,7 +12,7 @@ const TeacherRegister = () => {
     const handleRegister = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://127.0.0.1:8000/api/teacher/register/', {
+            const response = await axios.post(` ${API_URL}/teacher/register/`, {
                 name,
                 phone_number: phoneNumber,
                 subject,
