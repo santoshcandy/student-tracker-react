@@ -53,37 +53,50 @@ import { API_URL } from '../Config';
     return (
         <div className="dashboard-container">
         <div className="dashboard-header">
-            <h1 className="dashboard-title">{studentData.name}'s Dashboard</h1>
-            <h3 className="total-score">Total Score: {total}</h3>
+          <h1 className="dashboard-title">{studentData.name}</h1>
+          <h3 className="total-score">{total}</h3>
         </div>
-
+  
         <div className="student-info">
-            <h2 className="section-title">Student Information</h2>
-            <p><strong>Registration Number:</strong> {studentData.reg_number}</p>
-            <p><strong>Date of Birth:</strong> {studentData.dob}</p>
-            <p><strong>Gender:</strong> {studentData.sex}</p>
-            <p><strong>Class:</strong> {studentData.student_class_name}</p>
+          <h2 className="sectionn-title">Student Information</h2>
+          <p><strong>Registration Number:</strong> {studentData.reg_number}</p>
+          <p><strong>Date of Birth:</strong> {studentData.dob}</p>
+          <p><strong>Gender:</strong> {studentData.sex}</p>
+          <p><strong>Class:</strong> {studentData.student_class_name}</p>
         </div>
-
+  
         <div className="marks-section">
-            <h2 className="section-title">Marks</h2>
-             <ul className="marks-list">
-                {marks.map((mark) => (
-                    <li key={mark.id} className="mark-item">
-                        <div><strong>Subject:</strong> {mark.subject}</div>
-                        <div><strong>Assignment Marks:</strong> {mark.assigment_marks}</div>
-                        <div><strong>Seminar Marks:</strong> {mark.seminar_marks}</div>
-                         <div><strong>Behaviour Marks:</strong> {mark.behaviour_marks}</div>
-
-                        <div><strong>Assessment Marks:</strong> {mark.assessment_marks}</div>
-
-                     </li>
-                ))}
-            </ul>
+          <h2 className="sectionnn-title">Marks</h2>
+           <table className="marks-table">
+            <thead>
+              <tr>
+                <th>Subject</th>
+                <th>Assignment Marks</th>
+                <th>Seminar Marks</th>
+                <th>Behaviour Marks</th>
+                <th>Assessment Marks</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {marks.map((mark) => (
+                <tr key={mark.id}>
+                  <td>{mark.subject}</td>
+                  <td>{mark.assigment_marks}</td>
+                  <td>{mark.seminar_marks}</td>
+                  <td>{mark.behaviour_marks}</td>
+                  <td>{mark.assessment_marks}</td>
+                  <td>
+                    
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
-
+  
         
-    </div>
+      </div>
     );
 };
 

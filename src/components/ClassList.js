@@ -26,7 +26,7 @@ const ClassList = () => {
 
     return (
         <div className="classes-section">
-        <h2 className="section-title">Classes</h2>
+        <h2 className="section-titleee">Classes</h2>
         <ul className="classes-list">
             {classes.map((classItem) => (
                 <li key={classItem.id} className="class-item" onClick={() => handleClassClick(classItem.id)}>

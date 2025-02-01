@@ -28,7 +28,11 @@
     margin-bottom: 20px;
     animation: slideIn 1s ease-in-out;
 }
-
+.form-control::placeholder {
+    color: #FFFF00; /* Bright yellow placeholder text */
+    opacity: 1; /* Ensure full opacity */
+  }
+  
 /* Form styles */
 .login-form {
     display: flex;

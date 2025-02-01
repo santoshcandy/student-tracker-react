@@ -1,79 +1,247 @@
-/* Homepage.css */
+ /* General styles for the homepage */
 .homepage-container {
-    background-color: #1a1a2e; /* Dark background */
-    color: #eaeaea; /* Light text for contrast */
-    height: 100vh; /* Full height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  height: auto;
+  background-color: #1a1a2e;
+  color: #eaeaea;
+  flex-direction: column;
+  animation: fadeIn 1.5s ease-in-out;
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  width: 100%;
+}
+
+.hamburger-menu {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.line {
+  width: 30px;
+  height: 5px;
+  background-color: #f9a825;
+  transition: all 0.3s ease;
+}
+
+.line.open:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.line.open:nth-child(2) {
+  opacity: 0;
+}
+
+.line.open:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #16213e;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  left: -250px;
+  height: 100%;
+  transition: left 0.3s ease;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 99;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-link {
+  display: block;
+  color: #ffffff;
+  padding: 12px 20px;
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+.sidebar-link:hover {
+  background-color: #f9a825;
+  color: #333333;
+}
+
+/* Content section */
+.content-container {
+  margin-top: 80px;
+  text-align: center;
+  padding: 30px;
+  background-color: #16213e;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.ch {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #f9a825;
+}
+
+.cp {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #f1f1f1;
+}
+
+.btn {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-teacher {
+  background-color: #4caf50;
+  color: white;
+}
+
+.btn-student {
+  background-color: #2196f3;
+  color: white;
+}
+
+.btn-teacher:hover,
+.btn-student:hover {
+  background-color: #ffffff;
+  color: #333333;
+  transform: scale(1.1);
+}
+
+/* Project Info Section */
+.project-info {
+  padding: 50px 20px;
+  background-color: #16213e;
+  color: #f1f1f1;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #f9a825;
+}
+
+.project-description {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.feature-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.feature-item {
+  text-align: center;
+  width: 250px;
+  opacity: 0;
+  animation: fadeInText 1.5s forwards;
+}
+
+.feature-item p {
+  font-size: 1.2rem;
+  color: #f9a825;
+  margin-top: 10px;
+}
+
+/* Fade-in animation for text */
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.feature-item.animate__fadeInLeft {
+  animation-name: fadeInTextLeft;
+}
+
+@keyframes fadeInTextLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.feature-item.animate__fadeInRight {
+  animation-name: fadeInTextRight;
+}
+
+@keyframes fadeInTextRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Footer Section */
+.footer {
+  padding: 20px;
+  background-color: #16213e;
+  color: #f1f1f1;
+  text-align: center;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .feature-list {
     flex-direction: column;
-    text-align: center;
-    animation: fadeIn 1.5s ease-in-out;
+    align-items: center;
   }
-  
-  .content-container {
-    max-width: 600px;
-    padding: 30px;
-    background-color: #16213e; /* Slightly darker box background */
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    animation: slideUp 1.5s ease-out;
-  }
-  
-  .ch {
-    font-size: 3rem;
+
+  .feature-item {
+    width: 80%;
     margin-bottom: 20px;
-    color: #f9a825; /* Golden color for title */
   }
-  
- .cp {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: #f1f1f1;
-  }
-  
+
   .btn {
-    padding: 12px 30px;
-    font-size: 1.1rem;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
+    width: 100%;
+    margin-bottom: 10px;
   }
-  
-  /* Color styles for buttons */
-  .btn-teacher {
-    background-color: #4caf50; /* Green color for Teacher button */
-    color: white;
+
+  .hamburger-menu {
+    top: 15px;
+    left: 15px;
   }
-  
-  .btn-student {
-    background-color: #2196f3; /* Blue color for Student button */
-    color: white;
+
+  .sidebar {
+    width: 200px;
   }
-  
-  /* Hover effect for buttons */
-  .btn-teacher:hover,
-  .btn-student:hover {
-    background-color: #ffffff;
-    color: #333333;
-    transform: scale(1.1);
-  }
-  
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slideUp {
-    0% {
-      transform: translateY(30px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-  
+}

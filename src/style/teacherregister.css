@@ -60,7 +60,11 @@
     cursor: pointer;
     transition: background-color 0.3s;
 }
-
+.form-control::placeholder {
+    color: #FFFF00; /* Bright yellow placeholder text */
+    opacity: 1; /* Ensure full opacity */
+  }
+  
 .btn-submit:hover {
     background-color: var(--button-hover-color);
 }

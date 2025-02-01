@@ -33,7 +33,11 @@
     border-radius: 4px;
     font-size: 16px;
 }
-
+.form-control::placeholder {
+    color: #FFFF00; /* Bright yellow placeholder text */
+    opacity: 1; /* Ensure full opacity */
+  }
+  
 .form-control:focus {
     outline: none;
     border-color: #1ABC9C;

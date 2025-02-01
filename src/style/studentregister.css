@@ -63,7 +63,11 @@
     margin-top: 20px;
     font-size: 18px;
 }
-
+.form-control::placeholder {
+    color: #ffffff; /* Bright yellow placeholder text */
+    opacity: 1; /* Ensure full opacity */
+  }
+  
 .success {
     color: #1ABC9C;
 }

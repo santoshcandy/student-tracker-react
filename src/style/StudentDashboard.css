@@ -1,248 +1,274 @@
-General Styles
-:root {
-    --primary-color: #1a3d6d; /* Dark Blue */
-    --secondary-color: #e2e2e2; /* Light Gray */
-    --accent-color: #ffffff; /* White */
-}
-
+/* Global Styles */
 body {
-    background-color: var(--secondary-color);
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
+    background-color: #F2F2F2; /* Light gray background */
+    color: #333333; /* Charcoal Black text for better readability */
     margin: 0;
     padding: 0;
-}
-
-.dashboard-container {
-    padding: 20px;
-    margin-top: 30px;
-}
-
-/* Header Styling */
-.header {
-    background-color: var(--primary-color);
-    color: var(--accent-color);
+    overflow-x: hidden;
+  }
+  
+  /* Dashboard Container */
+  .dashboard-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
     padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    animation: fadeIn 1s ease-in-out;
+    background-color: #FFFFFF; /* White background for the overall container */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-out; /* Animation for smooth fade-in effect */
+  }
+  
+  /* Header */
+  .dashboard-header {
+    display: flex;
+    justify-content:  space-evenly;
+    align-items: center;
+    margin-bottom: 30px;
+    background-color: #4169E1; /* Royal Blue for header */
+    padding: 20px;
+    border-radius: 12px;
+    color: #FFFFFF;
+    animation: slideIn 1s forwards; /* Animation to slide in header */
+  }
+  
+  .dashboard-title {
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: #FFD700; /* Soft Gold for title */
+    animation: colorFade 2s infinite alternate; /* Infinite animation for color fade */
+    text-transform: uppercase;
+  }
+  
+  .total-score {
+    font-size: 4rem;
+    color: #FFD700; /* Soft Gold for total score */
+    font-weight: bold;
+    background-color: #ffffff; /* Royal Blue for rounded background */
+    padding: 20px 40px ; /* Adjust padding to ensure enough space around the text */
+    border-radius: 60px; /* Makes the background rounded (pill-shaped) */
+    display: inline-block; /* To shrink wrap the total score text */
+    animation: bounceIn 2s infinite alternate; /* Bounce animation for total score */
+    text-align: center; /* Ensures text is centered */
 }
 
-.header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-.header h3 {
-    font-size: 1.5rem;
-}
-
-/* Section Styles */
-.section {
-    background-color: var(--accent-color);
-    margin-top: 30px;
+  /* Student Info Section */
+  .student-info {
+    background-color: #E6E6FA; /* Pastel Lavender for the background */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-.section h2 {
-    font-size: 1.8rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.section p {
-    font-size: 1.2rem;
-    color: #555;
-}
-
-/* Marks List */
-.marks-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.marks-item {
+    margin-bottom: 30px;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+    color: #4169E1; /* Royal Blue for section titles */
     margin-bottom: 15px;
-    background-color: #f8f9fa;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
-}
-
-.marks-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.marks-item div {
+  }
+  
+  .student-info p {
     font-size: 1.1rem;
-    margin-bottom: 8px;
-}
-
-.marks-item div strong {
-    color: var(--primary-color);
-}
-
-/* CSS Animation */
-@keyframes fadeIn {
+    color: #333333; /* Charcoal Black for text */
+    margin: 8px 0;
+  }
+  
+  /* Marks Section */
+  .marks-section {
+    margin-bottom: 30px;
+  }
+  
+  .marks-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .marks-table th,
+  .marks-table td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #F08080; /* Light Coral border for table */
+  }
+  
+  .marks-table th {
+    background-color: #F08080; /* Light Coral for table header */
+    color: #FFFFFF; /* White text for contrast */
+    font-size: 1.1rem;
+  }
+  
+  .marks-table td {
+    background-color: #FFFFFF; /* White background for table rows */
+    color: #2F4F4F; /* Dark Slate Gray text for table */
+  }
+  
+  /* Marks Inside Circle and Bold */
+  .marks-table td .mark {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #4169E1; /* Royal Blue for circle */
+    color: #FFFFFF; /* White text */
+    border-radius: 50%;
+    font-weight: bold;
+    line-height: 40px; /* Center the text vertically */
+    font-size: 1.2rem;
+    text-align: center;
+    animation: pulseCircle 1.5s infinite; /* Infinite pulse animation */
+  }
+  
+  /* Animation for Table Row Hover */
+  .marks-table tr:nth-child(even) {
+    background-color: #FFFFFF; /* White for alternating rows */
+  }
+  
+  .marks-table tr:hover {
+    background-color: #FFD700; /* Soft Gold on hover */
+    color: #FFFFFF; /* White text on hover */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Button Styling */
+  button {
+    background-color: #50C878; /* Emerald Green for buttons */
+    border: none;
+    padding: 10px 18px;
+    color: #FFFFFF; /* White text */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #3E8E41; /* Darker Emerald Green on hover */
+    transform: translateY(-2px);
+  }
+  
+  /* Button for adding new marks */
+  .btn-primary {
+    background-color: #50C878; /* Emerald Green */
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    color: #FFFFFF; /* White text for clarity */
+  }
+  
+  .btn-primary:hover {
+    background-color: #3E8E41; /* Darker Emerald Green for hover */
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive Layout */
+  @media screen and (max-width: 768px) {
+    .dashboard-container {
+      padding: 15px;
+    }
+  
+    .dashboard-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .dashboard-title {
+      font-size: 1.8rem;
+    }
+  
+    .total-score {
+      font-size: 1.3rem;
+    }
+  
+    .marks-table th,
+    .marks-table td {
+      padding: 8px 10px;
+      font-size: 0.9rem;
+    }
+  
+    /* Marks Table Mobile Responsive */
+    .marks-table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  
+    .marks-table th,
+    .marks-table td {
+      min-width: 120px;
+      word-wrap: break-word;
+    }
+  
+    .marks-table td .mark {
+      width: 35px;
+      height: 35px;
+      font-size: 1rem;
+      line-height: 35px;
+    }
+  
+    /* Buttons for smaller devices */
+    button {
+      padding: 8px 15px;
+      font-size: 0.95rem;
+    }
+  }
+  
+  /* Keyframe Animations */
+  @keyframes slideIn {
     0% {
-        opacity: 0;
-        transform: translateY(-20px);
+      transform: translateY(-50px);
+      opacity: 0;
     }
     100% {
-        opacity: 1;
-        transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
     }
-}
-
-
-/* Custom styles for the student dashboard */
-
-/* Background and color palette */
-:root {
-    --primary-color: #4C9A2A; /* Green (For success, fresh, and professional feel) */
-    --secondary-color: #2C3E50; /* Dark blue (For a professional feel) */
-    --accent-color: #F39C12; /* Golden accent color */
-    --background-color: #F5F5F5; /* Light gray background */
-    --white-color: #FFFFFF;
-    --gray-color: #BDC3C7;
-}
-
-/* Global body styles */
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--background-color);
-    margin: 0;
-    padding: 0;
-}
-
-/* Dashboard container */
-.dashboard-container {
-    padding: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Header section */
-.dashboard-header {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 1s ease-in-out;
-}
-
-.dashboard-title {
-    font-size: 36px;
-    margin: 0;
-}
-
-.total-score {
-    font-size: 20px;
-}
-
-/* Section Titles */
-.section-title {
-    font-size: 28px;
-    color: var(--secondary-color);
-    margin-bottom: 10px;
-    animation: slideIn 0.8s ease-in-out;
-}
-
-/* Student information */
-.student-info {
-    background-color: var(--white-color);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    color: #000000;
-}
-
-/* Marks section */
-.marks-section {
-    background-color: var(--white-color);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.marks-list {
-    list-style: none;
-    padding: 0;
-}
-
-.mark-item {
-    padding: 15px;
-    background-color: var(--gray-color);
-    margin-bottom: 10px;
-    border-radius: 5px;
-    animation: fadeIn 1s ease-in-out;
-}
-
-.mark-item div {
-    margin-bottom: 10px;
-}
-
-button {
-    margin-top: 10px;
-}
-
-/* Edit Button */
-.btn-warning {
-    background-color: var(--accent-color);
-    border-color: var(--accent-color);
-}
-
-.btn-warning:hover {
-    background-color: #F1C40F;
-}
-
-/* Animation Effects */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
+  }
+  
+  @keyframes colorFade {
+    0% {
+      color: #4169E1;
     }
-    to {
-        opacity: 1;
+    50% {
+      color: #FFD700;
     }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateX(-100%);
+    100% {
+      color: #50C878;
     }
-    to {
-        transform: translateX(0);
+  }
+  
+  @keyframes bounceIn {
+    0% {
+      transform: translateY(0);
     }
-}
-
-/* Responsive Design for smaller screens */
-@media (max-width: 768px) {
-    .dashboard-container {
-        padding: 15px;
+    50% {
+      transform: translateY(-10px);
     }
-
-    .dashboard-header {
-        padding: 15px;
+    100% {
+      transform: translateY(0);
     }
-
-    .marks-section {
-        padding: 15px;
+  }
+  
+  @keyframes pulseCircle {
+    0% {
+      transform: scale(1);
     }
-
-    .mark-item {
-        padding: 10px;
+    50% {
+      transform: scale(1.1);
     }
-
-    .section-title {
-        font-size: 24px;
+    100% {
+      transform: scale(1);
     }
-}
-
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
