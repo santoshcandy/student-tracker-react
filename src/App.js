@@ -11,6 +11,7 @@ import StudentLogin from './student/StudentLogin';
 import StdDashboard from './student/StdDashboard';
 import ClassRegister from './components/ClassRegister';
 import StudentRegister from './student/StudentRegister';
+import SubjectRegister from './components/SubjectRegister';
 const App = () => {
     return (
         <Router>
@@ -19,6 +20,7 @@ const App = () => {
                 <Route path="/teacher/register" element={<TeacherRegister/>} />
                 <Route path="/class/register" element={< ClassRegister/>} />
                 <Route path="/student/register" element={< StudentRegister/>} />
+                <Route path="/subject/register" element={< SubjectRegister/>} />
 
                 <Route path="/teacher/login" element={<TeacherLogin/>} />
                 <Route path="/student/login" element={< StudentLogin/>} />

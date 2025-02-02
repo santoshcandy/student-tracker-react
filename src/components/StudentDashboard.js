@@ -13,10 +13,17 @@ const StudentDashboard = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [total, setTotal] = useState();
   const [sub, setSub] = useState();
-  
+  const [teacherSubjects, setTeacherSubjects] = useState([]);
   // Assuming we have a list of subjects assigned to the teacher (could be fetched or hardcoded)
-  const teacherSubjects = ["Mathematics", "Science", "English"]; // Replace this with actual data
-  
+//    const fetchTeacherSubjects = async () => {
+//     try {
+//         const response = await axios.get(`${API_URL}/hsubject/list/`); // Replace this with the correct endpoint
+//         setTeacherSubjects(response.data); // Assuming the response is an array of subject names
+//     } catch (error) {
+//         console.error('Error fetching teacher subjects', error);
+//     }
+// };
+// fetchTeacherSubjects()
   useEffect(() => {
     const fetchStudentData = async () => {
       try {
@@ -94,11 +101,11 @@ const StudentDashboard = () => {
                 <td>{mark.assessment_marks}</td>
                 <td>
                   {/* Show the Edit button only for the subjects assigned to the teacher */}
-                  {teacherSubjects.includes(mark.subject) && (
+                  {/* {teacherSubjects.includes(mark.subject) && (
+                    )} */}
                     <button className="btn btn-warning" onClick={() => handleEditMarks(mark.id)}>
                       Edit
                     </button>
-                  )}
                 </td>
               </tr>
             ))}

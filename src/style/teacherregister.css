@@ -42,11 +42,13 @@
     border-radius: 5px;
     font-size: 16px;
     transition: border-color 0.3s;
+    color: lightgreen;
 }
 
 .form-control:focus {
     border-color: var(--primary-color);
     outline: none;
+    color: lightgreen;
 }
 
 /* Submit button styles */
@@ -105,4 +107,39 @@
     .section-title {
         font-size: 24px;
     }
+}
+/* Styling for the select dropdown */
+.form-control {
+    margin-bottom: 15px;
+    padding: 12px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    background-color: var(--white-color); /* Ensure white background */
+    color: var(--primary-color); /* Text color */
+}
+
+/* Change the text color when the select is focused */
+.form-control:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    color: var(--primary-color); /* Text color on focus */
+}
+
+/* Style the options in the select dropdown */
+.form-control option {
+    color: var(--primary-color); /* Text color for options */
+    background-color: var(--white-color); /* Background color for options */
+}
+
+/* If you want to make the text white specifically */
+.form-control {
+    color: #fff; /* White text for the select and options */
+}
+
+/* Adjust placeholder text color */
+.form-control::placeholder {
+    color: #FFFF00; /* Bright yellow placeholder text */
+    opacity: 1;
 }

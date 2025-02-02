@@ -30,6 +30,9 @@ const Homepage = () => {
           <li>
             <Link to="/class/register" className="sidebar-link">Class Register</Link>
           </li>
+          <li>
+            <Link to="/subject/register" className="sidebar-link">Subject Register</Link>
+          </li>
         </ul>
       </div>
 

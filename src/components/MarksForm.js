@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { API_URL } from '../Config';
+import "../style/markform.css"
 const MarksForm = ({ studentId, markId, existingMarkData, onFormSubmit }) => {
     const [subject, setSubject] = useState(existingMarkData ? existingMarkData.subject : '');
     const [assignmentMarks, setAssignmentMarks] = useState(existingMarkData ? existingMarkData.assigment_marks : 0);
@@ -8,13 +9,27 @@ const MarksForm = ({ studentId, markId, existingMarkData, onFormSubmit }) => {
     const [assessmentMarks, setAssessmentMarks] = useState(existingMarkData ? existingMarkData.assessment_marks : 0);
     const [behaviourMarks, setBehaviourMarks] = useState(existingMarkData ? existingMarkData.behaviour_marks : 0);
     const [teacher, setTeacher] = useState(existingMarkData ? existingMarkData.teacher : '');
-    const [student, setStudent] = useState(studentId);  // Assuming studentId is passed as a prop
+    const [student, setStudent] = useState(studentId);
+    const [subjectList, setSubjectList] = useState([]); // State to store subjects list
+
+    useEffect(() => {
+        const fetchSubjects = async () => {
+            try {
+                const response = await axios.get(`${API_URL}/subject/list/`); // API call to fetch the list of subjects
+                setSubjectList(response.data); // Assuming response.data is an array of subjects
+            } catch (error) {
+                console.error('Error fetching subjects:', error);
+            }
+        };
+
+        fetchSubjects();
+    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         const marksData = {
-             teacher,
+            teacher,
             student,
             subject,
             assigment_marks: assignmentMarks,
@@ -22,8 +37,9 @@ const MarksForm = ({ studentId, markId, existingMarkData, onFormSubmit }) => {
             assessment_marks: assessmentMarks,
             behaviour_marks: behaviourMarks,
         };
+
         const marksDataa = {
-            teacher_id:teacher,
+            teacher_id: teacher,
             student,
             subject,
             assigment_marks: assignmentMarks,
@@ -36,7 +52,7 @@ const MarksForm = ({ studentId, markId, existingMarkData, onFormSubmit }) => {
             let response;
             if (markId) {
                 // If markId exists, we are updating an existing mark
-                response = await axios.put(` ${API_URL}/marks/${markId}/`, marksDataa);
+                response = await axios.put(`${API_URL}/marks/${markId}/`, marksDataa);
             } else {
                 // If markId doesn't exist, create a new mark
                 response = await axios.post(`${API_URL}/marks/`, marksData);
@@ -51,15 +67,21 @@ const MarksForm = ({ studentId, markId, existingMarkData, onFormSubmit }) => {
     return (
         <form onSubmit={handleSubmit} className="marks-form">
             <h2>{markId ? 'Update' : 'Add'} Marks</h2>
-            
+
             <div>
                 <label>Subject</label>
-                <input
-                    type="text"
+                <select
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
                     required
-                />
+                >
+                    <option value="">Select Subject</option>
+                    {subjectList.map((subjectItem) => (
+                        <option key={subjectItem.id} value={subjectItem.name}>
+                            {subjectItem.name}
+                        </option>
+                    ))}
+                </select>
             </div>
 
             <div>
