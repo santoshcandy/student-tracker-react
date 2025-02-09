@@ -35,8 +35,7 @@ const StudentList = () => {
                                 <h5 className="card-title">
                                     <span className="badge bg-primary mr-2">{index + 1}</span> {student.name}
                                 </h5>
-                                <p className="card-text">
-                                    <strong>Overall Score:</strong> {student.overall_score}
+                                <p className="card-text"> 
                                 </p>
                                 <button
                                     className="btn btn-outline-primary w-100"
