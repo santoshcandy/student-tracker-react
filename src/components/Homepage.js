@@ -11,6 +11,16 @@ const Homepage = () => {
 
   return (
     <div className="homepage-container">
+      {/* College Name and Logo */}
+      <div className="header">
+        <img 
+          src="https://tse3.mm.bing.net/th?id=OIP.UcxVpVyKa9xwkTviKhpHawHaHa&pid=Api&P=0&h=220" 
+          alt="Sree Muthukumaraswamy College Logo" 
+          className="college-logo" 
+        />
+        <h1 className="college-name">Sree Muthukumaraswamy College</h1>
+      </div>
+
       {/* Hamburger Menu */}
       <div className="hamburger-menu" onClick={toggleSidebar}>
         <div className={`line ${sidebarOpen ? 'open' : ''}`}></div>
@@ -38,7 +48,7 @@ const Homepage = () => {
 
       {/* Main Content */}
       <div className="content-container">
-        <h1 className="ch animate__animated animate__fadeIn">Welcome to the Student Tracker</h1>
+        <h1 className="ch animate__animated animate__fadeIn">Student Assessment And Performance Tracking Analysis</h1>
         <p className="cp animate__animated animate__fadeIn animate__delay-1s">Please choose your login option:</p>
         <div>
           <Link to="/teacher/login" className="btn btn-teacher m-3 animate__animated animate__fadeIn animate__delay-2s">
@@ -79,6 +89,14 @@ const Homepage = () => {
       {/* Footer Section */}
       <footer className="footer">
         <p>&copy; 2025 Student Tracker. All rights reserved.</p>
+        <div className="contact-info">
+          <p>Contact:</p>
+          <ul>
+            <li>Gowtham - 8015003920</li>
+            <li>Tharun - 9176856770</li>
+            <li>Krishnamoorthy - 9360474769</li>
+          </ul>
+        </div>
       </footer>
     </div>
   );

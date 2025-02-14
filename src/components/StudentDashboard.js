@@ -86,8 +86,8 @@ const StudentDashboard = () => {
               <th>Subject</th>
               <th>Assignment Marks</th>
               <th>Seminar Marks</th>
-              <th>Behaviour Marks</th>
-              <th>Assessment Marks</th>
+              <th>Attitude Marks</th>
+              <th>Test Marks</th>
               <th>Actions</th>
             </tr>
           </thead>

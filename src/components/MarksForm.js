@@ -105,7 +105,7 @@ const MarksForm = ({ studentId, markId, existingMarkData, onFormSubmit }) => {
             </div>
 
             <div>
-                <label>Assessment Marks</label>
+                <label>Test Marks</label>
                 <input
                     type="number"
                     value={assessmentMarks}
@@ -115,7 +115,7 @@ const MarksForm = ({ studentId, markId, existingMarkData, onFormSubmit }) => {
             </div>
 
             <div>
-                <label>Behaviour Marks</label>
+                <label>Attitude Marks</label>
                 <input
                     type="number"
                     value={behaviourMarks}

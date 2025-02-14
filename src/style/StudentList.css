@@ -14,6 +14,9 @@
 .card-title {
     font-size: 1.25rem;
     font-weight: 500;
+    white-space: nowrap; /* Ensure the name stays in one line */
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .card-text {
@@ -44,4 +47,104 @@ button:hover {
 h2 {
     color: #333;
     font-size: 2rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .card-body {
+        text-align: left; /* Align text to the left for mobile */
+        animation: fadeInMobile 0.5s ease-out; /* Animation for mobile */
+    }
+
+    .d-flex {
+        display: flex !important;
+        animation: slideInMobile 0.5s ease-out; /* Animation for mobile */
+    }
+
+    .d-md-none {
+        display: block !important;
+    }
+
+    .d-none.d-md-block {
+        display: none !important;
+    }
+
+    /* Smaller icon size for the view button */
+    .btn-outline-primary .fa-eye {
+        font-size: 1.2rem; /* Adjust the icon size here */
+    }
+
+    /* Adjust the padding of the button */
+    .btn-outline-primary {
+        padding: 5px 10px; /* Reduce the padding for a smaller button */
+        font-size: 1.2rem; /* Reduce font size for the button */
+    }
+
+    /* Prevent the icon from hiding */
+    .btn-outline-primary .fa-eye {
+        opacity: 1 !important; /* Keep the icon visible */
+    }
+
+    /* Slide-in effect for cards */
+    .col-md-6.col-lg-4 {
+        opacity: 0;
+        animation: fadeInCard 0.5s ease-out forwards;
+    }
+
+    .col-md-6.col-lg-4:nth-child(odd) {
+        animation-delay: 0.2s;
+    }
+
+    .col-md-6.col-lg-4:nth-child(even) {
+        animation-delay: 0.4s;
+    }
+    
+}
+
+/* Keyframe animations */
+
+/* Fade-in effect for mobile */
+@keyframes fadeInMobile {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide-in effect for mobile */
+@keyframes slideInMobile {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Fade-in effect for view icon button */
+@keyframes fadeInIcon {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Fade-in effect for cards */
+@keyframes fadeInCard {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

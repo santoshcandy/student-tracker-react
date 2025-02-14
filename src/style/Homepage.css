@@ -1,4 +1,4 @@
- /* General styles for the homepage */
+/* General styles for the homepage */
 .homepage-container {
   display: flex;
   height: auto;
@@ -12,6 +12,26 @@
   width: 100%;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  animation: slideInDown 1s ease-in-out;
+}
+
+.college-logo {
+  height: 60px;
+  margin-right: 20px;
+}
+
+.college-name {
+  font-size: 2.5rem;
+  color: #f9a825;
+  animation: fadeInText 1.5s ease-in-out;
+}
+
+/* Hamburger Menu */
 .hamburger-menu {
   position: absolute;
   top: 20px;
@@ -55,6 +75,7 @@
   transition: left 0.3s ease;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
   z-index: 99;
+  animation: slideInLeft 0.5s ease-in-out;
 }
 
 .sidebar.open {
@@ -90,18 +111,21 @@
   background-color: #16213e;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 1.5s ease-in-out;
 }
 
 .ch {
   font-size: 3rem;
   margin-bottom: 20px;
   color: #f9a825;
+  animation: fadeInText 1.5s ease-in-out;
 }
 
 .cp {
   font-size: 1.2rem;
   margin-bottom: 30px;
   color: #f1f1f1;
+  animation: fadeInText 1.5s ease-in-out;
 }
 
 .btn {
@@ -110,6 +134,7 @@
   border-radius: 5px;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
+  animation: fadeInText 1s ease-in-out;
 }
 
 .btn-teacher {
@@ -136,6 +161,7 @@
   color: #f1f1f1;
   text-align: center;
   margin-top: 50px;
+  animation: fadeInUp 1.5s ease-in-out;
 }
 
 .section-title {
@@ -154,6 +180,7 @@
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 20px;
+  animation: fadeInText 1.5s ease-in-out;
 }
 
 .feature-item {
@@ -217,10 +244,51 @@
   background-color: #16213e;
   color: #f1f1f1;
   text-align: center;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+.contact-info {
+  margin-top: 20px;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info li {
+  margin: 5px 0;
 }
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .college-logo {
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  .college-name {
+    font-size: 2rem;
+  }
+
+  .content-container {
+    padding: 20px;
+  }
+
+  .ch {
+    font-size: 2.5rem;
+  }
+
+  .cp {
+    font-size: 1rem;
+  }
+
   .feature-list {
     flex-direction: column;
     align-items: center;
